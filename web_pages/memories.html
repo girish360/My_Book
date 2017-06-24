@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Memories</title>
+<link rel="stylesheet" type="text/css" href="../css/memories.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../scripts/memories.js"></script>
+</head>
+<body class="memories-body">
+<div class="memories-header">
+ <h2>Memories</h2>
+</div>
+<div class="memories-newmemory">
+ <button class="creatememorybutton">Create New Memory&nbsp&nbsp<span><img src = " ../images/createnewmemory.jpg" height="20" width="20" ></img></span></button>
+</div>
+<div class="memories-allmemories">
+   <div class="memoryabstract"  ng-repeat="x in memories" ><pre><span style="opacity: 0.5;">Title:</span>{{x.memory_title}}   <span style="opacity: 0.5;">last modified:</span> {{x.lastmodified_date}}</pre>
+       <div class="memorydata">{{x.memory_data}}</div>
+   </div>
+</div>
+
+</body>
+</html>

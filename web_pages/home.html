@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My_Story</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
+<link rel="stylesheet" type="text/css" href="../css/virticalnav.css">
+<link rel="stylesheet" type="text/css" href="../css/home.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="../scripts/menu.js"></script>
+<script src="../scripts/virticalnav.js"></script>
+<script src="../scripts/home.js"></script>
+</head>
+<body class="body">
+
+<div class="header">
+
+<div class="headerText">
+<h1  class="rainbow" >Welcome to MyStory
+</h1>
+</div>
+
+<div class="headerOptions">
+<div class="dropdown">
+  <button onclick="menuFunction()" class="dropbtn"><span class="dropdownspan"><img id="smalllogoimage" src = " ../images/logo.jpg" ></img></span>&nbsp&nbsp<span class="fa fa-angle-down" style="font-size:30px;color:red"></span></button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">Logout</a>
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div class="largeBox"  ng-app="myApp">
+
+ <div class="smallBox_left">
+    <div class="profileimage">
+	   <input type="image" id="profileimage" src = " ../images/profile.jpg"><br>
+	   <p id="username"></p>
+	</div>
+	<div class="virticalnav">
+	  <ul>
+        <li><a class="active" href="#/!">Home</a></li>
+        <li><a href="#!memories">Memories</a></li>
+        <li><a href="#!inspirationalstories">InspireStories</a></li>
+		<li><a href="#!images">Images</a></li>
+        <li id="flip"><a href="#!other">Other</a>
+            <ul>
+            <div class="sublist" id="panel">
+            <li><a href="#!links">Links</a></li>
+            <li><a href="#!quotes">Quotes</a></li>
+            </div>
+             </ul>
+        </li>
+       </ul>
+	 </div>
+	   
+ </div>
+  
+  <div class="smallBox_center">
+    <div class="ng-view">
+	</div>
+  </div>
+  
+</div>	
+
+<div class="footer">
+<p style="color:red ! important">Owned by &copy;abhilashreddy</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+body{
+padding: 0px;
+margin: 0px;
+background:url(../images/new_background.jpg);
+background-size: 1500px 1000px;
+background-repeat: no-repeat;
+ }
+
+div.header
+{
+ width: auto;
+ height: 60px;
+ padding-bottom: 30px;
+ margin-bottom:0px;
+ margin-top:0px;
+ padding-top:0px;
+ text-align: center;
+ background: white;
+ position:fixed;
+ top:0px;
+ z-index:10;
+}
+
+div.headerText
+{
+ width: 300px;
+ height: 50px;
+ background-color: white;
+ padding-top: 0px;
+ padding-left: 500px;
+ padding-right: 20px;
+ padding-bottom: 0px;
+ float : left;
+ text-align: center;
+}
+
+.rainbow 
+{
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+div.headerOptions
+{
+ background-color: white;
+ padding-top: 10px;
+ padding-left: 350px;
+ padding-right: 20px;
+ padding-bottom: 0px;
+ width: 150px;
+ height: 50px;
+ float: left;
+}
+
+#smalllogoimage
+{
+height:40px;
+width:40px;
+}
+
+div.lineText
+{
+ width: 300px;
+ height: 20px;
+ padding-top: 0px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 50px;
+ margin: 0px;
+ text-align: center;
+ border: 0px solid green;
+ position:static;
+ margin-top: 0px;
+ margin-bottom: 30px;
+}
+
+div.largeBox
+{
+ width: auto;
+ height: ;
+ padding-top: 90px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 10px;
+ margin-top:20px;
+ position:static;
+}
+div.smallBox_left
+{
+  width: 200px;
+ height: 1000px;
+ background-color: #E2F430;
+ padding-top: 20px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ float : left;
+ position: fixed;
+ overflow: auto;
+}
+
+div.profileimage
+{
+ width: 150px;
+ height: 100px;
+ padding: 5px;
+ margin: 5px; 
+}
+#profileimage
+{
+	width:80px;
+	height:80px;
+	display: block;
+    margin: 0 auto;
+}
+
+.virticalnav
+{
+  width:300px;
+  height:300px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+div.smallBox_center
+{
+  width: 900px ;
+ height: 1000px;
+ background-color: #ffea99;
+ margin-left:250px;
+ padding-top: 0px;
+ padding-left: 20px;
+ padding-right: 100px;
+ padding-bottom: 20px;
+ float : left;
+ position:relative;
+ z-index:0;
+}
+.ng-view
+{
+	/*position:absolute;*/
+	background:;
+    border: ;
+    padding: 5px;
+    margin:5px;
+    top: 5px;
+    left: 30px;
+}
+
+
+
+div.footer
+{
+	width: 800px;
+ height: 30px;
+ padding-top: 20px;
+ padding-left: 150px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ margin-left: 300px;
+ text-align: center;
+ border: 0px solid green;
+ position:static;
+ /*margin-top: 100px;*/
+ margin-bottom: 20px;
+ background: yellow;
+}
+

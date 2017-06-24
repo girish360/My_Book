@@ -1,0 +1,130 @@
+body{
+padding: 0px;
+margin: 0px;
+background:url(../images/new_background.jpg);
+background-size: 1500px 1000px;
+background-repeat: no-repeat;
+ }
+
+
+div.header
+{
+ width: 500px;
+ height: 80px;
+ padding-top: 20px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ margin: auto;
+ text-align: center;
+ border: 0px solid green;
+ position:relative;
+}
+div.headerText
+{
+ width: 400px;
+ height: 50px;
+ padding-top: 0px;
+ padding-left: 10px;
+ padding-right: 0px;
+ padding-bottom: 20px;
+ margin: auto;
+ text-align: center;
+ border: 0px solid green;
+ position:fixed;
+ margin-top: 10px;
+ margin-bottom: 20px;
+ margin-left:50px;
+ background: white;
+}
+.rainbow 
+{
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+div.lineText
+{
+ width: 300px;
+ height: 20px;
+ padding-top: 30px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 50px;
+ margin: auto;
+ text-align: center;
+ border: 0px solid green;
+ position:static;
+ margin-top: 50px;
+ margin-bottom: 30px;
+}
+	 
+
+div.largeBox
+{
+ width: 800px;
+ height: 200px;
+ padding-top: 40px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ margin-top: 10px;
+ margin-bottom: 20px;
+ background: white;
+ margin: auto;
+ text-align: center;
+ background:#DAF7A6;
+}
+div.smallBox_left
+{
+  width: 300px;
+ height: 150px;
+ background-color: white;
+ padding-top: 20px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ float : left;
+}
+div.smallBox_center
+{
+  width: 300px;
+ height: 100px;
+ background-color: #33FFE3;
+ margin-left:40px;
+ padding-top: 20px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ float : left;
+}
+div.smallBox_right
+{
+  width: 200px;
+ height: 100px;
+ background-color: black;
+ padding-top: 20px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ float: right;
+}
+
+div.footer
+{
+	width: 1000px;
+ height: 50px;
+ padding-top: 20px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ margin: auto;
+ text-align: center;
+ border: 0px solid green;
+ position:static;
+ margin-top: 50px;
+ margin-bottom: 20px;
+ background: yellow;
+}

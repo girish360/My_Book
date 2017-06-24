@@ -1,0 +1,45 @@
+.memories-body
+ {
+  background:#D488B0;
+  width: 900px;
+  margin: 0 auto;
+}
+.memories-header
+ {
+  background:yellow;
+  border: 3px solid green;
+  width: 850px;
+  text-align: center;
+}
+.memories-newmemory
+ {
+  background:red;
+  border: 1px solid green;
+  width:100%;
+  text-align: right;
+}
+.memoryabstract
+ {
+    padding: 5px;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+	text-align:center;
+}
+.memorydata
+{   
+    background-color: #F6FACC;
+    padding: 20px;
+	margin:20px;
+	max-width: 710px;
+	text-align:left;
+	word-wrap: break-word;
+	display:none;
+	white-space:pre-wrap;
+}
+.memories-allmemories
+{
+  border: 3px;
+  padding: 10px;
+  margin: 10px;
+}
+

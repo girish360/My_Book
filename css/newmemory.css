@@ -1,0 +1,44 @@
+.newmemory-body
+ {
+  background:#D488B0;
+  width: 900px;
+  margin: 0 auto;
+}
+.newmemory-header
+ {
+  background:yellow;
+  border: 3px solid green;
+  width: 850px;
+  text-align: center;
+}
+
+.newmemory-title
+ {
+  background:red;
+  border: 1px solid green;
+  width:80%;
+}
+.newmemory-date
+{
+  float:right;
+}
+.newmemory-memoryfield
+{
+  border: 3px solid blue;
+  padding: 10px;
+  margin:  10px;
+  text-align: center;
+}
+.memory
+ {
+    padding: 5px;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+.newmemory-save
+ {
+  background:red;
+  border: 1px solid green;
+  width:80%;
+  text-align: right;
+}
