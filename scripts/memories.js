@@ -36,8 +36,14 @@
     });
 	$(document).on("click", ".memoryabstract .memorydata", function(e) {
          e.stopPropagation();
-		 window.alert("stopped propagating to child");
+		 //window.alert("stopped propagating to child");
 	});
+
+	$(document).on("click", ".memoryabstract .memoryoptions", function(e) {
+         e.stopPropagation();
+		// window.alert("stopped propagating to child");
+	});
+
 	setTimeout(function(){ 
 	$(".smallBox_center").css("height", $(".memories-allmemories").height()+ 200);
     $(".footer").css("margin-top", $(".memories-allmemories").height()+ 200);

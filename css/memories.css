@@ -41,5 +41,10 @@
   border: 3px;
   padding: 10px;
   margin: 10px;
+  border: solid 1px blue;
+}
+.memoryoptions
+{
+  float: right;
 }
 
