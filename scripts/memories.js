@@ -3,6 +3,7 @@
 
     $(document).ready(function(){
 		
+
 		
 	if (window.location.href.indexOf('reload')==-1) {
          window.location.replace(window.location.href+'?reload');
@@ -49,7 +50,7 @@
     $(".footer").css("margin-top", $(".memories-allmemories").height()+ 200);
 	console.log($(".memories-allmemories").height());
 	console.log($(".smallBox_center").height());
-	}, 100);
+	}, 200);
 	
 	
     });
@@ -60,6 +61,16 @@ $('.creatememorybutton').click(function() {
    window.location = "#!newmemory";
   
 });
+
+ function editMemory()
+  {
+      window.alert("edit Clicked") 
+  }
+ function deleteMemory() 
+  {
+      window.alert("delete Clicked") 
+  }
+
 
 
 
