@@ -26,6 +26,9 @@ app.config(function($routeProvider) {
     })
 	.when("/newmemory", {
         templateUrl : "newmemory.html"
+    })
+	.when("/editmemory", {
+        templateUrl : "editmemory.html"
     });
 	
 });
@@ -35,27 +38,39 @@ app.controller('memoriesController', function($scope, $http) {
 	$scope.msg = "I love London";
 	$scope.count = 0;
 	$scope.memoryId = 0;
+	$scope.memoryTitle="";
+    $scope.memoryData="";
     $http.get("./php/memories.php").then(function (response) {
 		
 		$scope.memories = response.data.records;
 		//console.log($scope.memories);
 		});
 		
-	//Setting clicked memory id
-    $scope.setId = function(memoryId) {
+	//Setting "clicked memory id, title and data" 
+    $scope.setId = function(memoryId,memoryTitle,memoryData) {
                
 			   $scope.memoryId=memoryId;
+			   $scope.memoryTitle=memoryTitle;
+			   $scope.memoryData=memoryData;
 			 
             }
 			
-	//Editing clicked memory id
+	//Redirecting to editmemory
 	$scope.editMemory = function(memoryTitle) {
-              
+		       window.location = "#!editmemory";
+			   setTimeout(function(){ 
+               sessionStorage.editMemoryId = $scope.memoryId ;
+               sessionStorage.editMemoryTitle = $scope.memoryTitle ;	
+               sessionStorage.editMemoryData = $scope.memoryData ;			   
+               console.log(sessionStorage.editMemoryId);
+                 },100);			   
             }
-	//Deleting clicked memory id	
+	//Confirm Edit memory code is implemented in "editmemory.js" using editMemoryId session variable
+	
+	//Deleting "clicked memory"	
 	$scope.deleteMemory = function(memoryTitle) {
 		    
-                if (confirm("Do you really want to delete memory:  "+ memoryTitle)) 
+                if (confirm("Do you really want to delete this memory:  "+ memoryTitle)) 
 				{
                   //Delete
 				  //window.alert("Waiting for server : " + memoryTitle);
@@ -87,6 +102,8 @@ app.controller('memoriesController', function($scope, $http) {
 				}
 				//console.log($scope.memoryId);
             }
+			
+		
 	
 });
 

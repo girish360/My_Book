@@ -32,7 +32,7 @@
 		  $(".smallBox_center").css("height", $(".memories-allmemories").height()+ 200);
 		  //console.log("height after: " + $(".smallBox_center").attr("height"));
 		  $(".footer").css("margin-top", $(".memories-allmemories").height()+ 200);
-		 }},500);
+		 }},300);
 		 
     });
 	$(document).on("click", ".memoryabstract .memorydata", function(e) {
@@ -61,17 +61,5 @@ $('.creatememorybutton').click(function() {
    window.location = "#!newmemory";
   
 });
-
- function editMemory()
-  {
-      window.alert("edit Clicked") 
-  }
- function deleteMemory() 
-  {
-      window.alert("delete Clicked") 
-  }
-
-
-
 
 

@@ -16,7 +16,7 @@
  <button class="creatememorybutton">Create New Memory&nbsp&nbsp<span><img src = " ../images/createnewmemory.jpg" height="20" width="20" ></img></span></button>
 </div>
 <div class="memories-allmemories">
-   <div class="memoryabstract"  ng-repeat="x in memories" ng-click="setId(x.memory_id)"><pre><span style="opacity: 0.5;">Title:</span>{{x.memory_title}}   <span style="opacity: 0.5;">last modified:</span><span>{{x.lastmodified_date}}<span class="memoryoptions" ><img  src = " ../images/edit.png" height="25" width="25" ng-click="editMemory(x.memory_title)" ><img  src = " ../images/delete.png" height="25" width="25" ng-click="deleteMemory(x.memory_title)" ></span></pre>
+   <div class="memoryabstract"  ng-repeat="x in memories" ng-click="setId(x.memory_id, x.memory_title, x.memory_data)"><pre><span style="opacity: 0.5;">Title:</span>{{x.memory_title}}   <span style="opacity: 0.5;">last modified:</span><span>{{x.lastmodified_date}}<span class="memoryoptions" ><img  src = " ../images/edit.png" height="25" width="25" ng-click="editMemory(x.memory_title)"><img  src = " ../images/delete.png" height="25" width="25" ng-click="deleteMemory(x.memory_title)" ></span></pre>
        <div class="memorydata">{{x.memory_data}}</div>
    </div>
 </div>
