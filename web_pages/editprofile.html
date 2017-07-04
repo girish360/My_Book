@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>EditMemory</title>
+<link rel="stylesheet" type="text/css" href="../css/editprofile.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="../scripts/editprofile.js"></script>
+</style>
+</head>
+<body class="editprofile-body">
+<div class="editprofile-header">
+<h2>Edit Profile Page</h2>
+</div>
+<div class="editProfile_smallbox_left" ng-repeat="x in profile">
+<form action="" method="post" enctype="multipart/form-data">
+<table>
+<col width="190">
+<col width="80">
+<tr>
+<td>First name:</td> <td> <input type="text" name="firstname" value="{{x.firstname}}"></td>
+</tr>
+<tr>
+<td>  Last name:</td><td> <input type="text" name="lastname" value="{{x.lastname}}"></td>
+</tr>
+<tr>
+<td>  Email:</td><td><p>{{x.email}}</p></td>
+</tr>
+<tr>
+<td>  Password:</td><td><p>*******</p></td> <td><input type="button" value="Edit" onclick="editPassword()" /></td>
+</tr>
+<tbody class="editPassword" style="display:none">
+<tr>
+<td>  Enter old-Password:</td><td> <input type="text" name="old_password"></td>
+</tr>
+<tr>
+<td>  Enter New-Password:</td><td> <input type="text" name="new_password"></td>
+</tr>
+<tr>
+<td>  Confirm New-Password:</td><td> <input type="text" name="reentered_newpassword"></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="button" value="Cancel" id="cancel-password" name="" onclick="cancelPassword()"></td>
+</tbody>
+</table>
+</br></br></br></br></br></br></br></br></br>
+<table>
+<col width="200">
+<col width="200">
+<tr>
+
+    <td align="right">
+    <input type="submit" value="Save Changes " id="saveEditProfileChanges" name="saveEditProfileChanges" onclick="saveOtherProfile()">
+	</td>
+	<td align="right">
+	<input type="button" value="Cancel Changes " id="cancelChanges" name="cancelChanges">
+	</td>
+
+</tr>
+</table>
+</form>
+</div>
+
+
+
+<div class = "editProfile_smallbox_right">
+<table>
+<tr>
+    <td>
+	<div id='clock'></div>
+	</td>
+</tr>
+<tr>
+    <td align="center">
+	<input type="button" value="Edit Profile image"  onclick="document.getElementById('getval').click();" />
+	
+	<form action="" method="post" name="saveProfileImage"  enctype="multipart/form-data" onsubmit="saveImage()">
+	   <input type='file' name="fileToUpload" id='getval'  style="display:none;"/>
+       <input type="submit" value="Upload Image" name="saveProfileImage" id="saveProfileImage"   style="display:none;">
+     </form>
+	 
+	</td>
+</tr>
+</table>
+<input type="submit" value="Save Changes " id="save" name="saveChanges" ng-click="saveProfile()">
+</div>
+
+</body>
+</html>

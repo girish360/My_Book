@@ -41,10 +41,16 @@
 <div class="largeBox"  ng-app="myApp">
 
  <div class="smallBox_left">
-    <div class="profileimage">
-	   <input type="image" id="profileimage" src = " ../images/profile.jpg"><br>
-	   <p id="username"></p>
+    <div class="profile_div">
+	   <input type="image" id="profile_image" src = " ../images/abhilash.jpg" class="profile_image"><br>
+	   <div class="overlay"></div>
+       <div class="button" onclick="editProfile()">
+	   <div class="dim">
+	     Edit Profile
+       </div>
+       </div>
 	</div>
+	<div><p id="username" class="username"></p></div>
 	<div class="virticalnav">
 	  <ul>
         <li><a class="active" href="#/!">Home</a></li>

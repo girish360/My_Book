@@ -29,9 +29,16 @@ app.config(function($routeProvider) {
     })
 	.when("/editmemory", {
         templateUrl : "editmemory.html"
+    })
+	.when("/editprofile", {
+        templateUrl : "editprofile.html",
+		controller : "editProfileController"
     });
 	
 });
+
+
+
 
 //Memories page controller 
 app.controller('memoriesController', function($scope, $http) {
@@ -107,9 +114,34 @@ app.controller('memoriesController', function($scope, $http) {
 	
 });
 
+
+//For EditProfilePage
+app.controller('editProfileController', function($scope, $http) {
+	$scope.msg = "I love London";
+	//window.alert("Profile");
+	//console.log("profile");
+    $http.get("./php/editprofilefetch.php").then(function (response) {
+		
+		$scope.profile= response.data.records;
+		console.log($scope.profile);
+		});
+		
+	 $scope.saveProfile = function() {
+
+	           document.getElementById('saveProfileImage').click();
+			   //document.getElementById('saveProfileImage').click();
+			   //Here only the first submitted is working fine
+			   //document.getElementById('saveEditProfileChanges').click();
+			 
+               }
+	
+		
+});
+
+
+
 (function($) {
 $(document).ready(function(){
-
 $.ajax({
   type: "POST",
   url: "php/home.php",
@@ -118,5 +150,31 @@ $.ajax({
   	$("#username").text("Hello"+" "+ msg);
 });
 
+
 });
 })(jQuery);
+
+function editProfile()
+{
+//window.alert("Clicked Edit");
+window.location = "#!editprofile";
+}
+	
+
+function saveImage()
+{
+	window.alert("Save Image Clicked");
+      $.ajax({
+               url:'php/uploadprofileimage.php',
+               type:'post',
+               data:$('#saveProfileImage').serialize(),
+               success:function(response){
+              //whatever you wanna do after the form is successfully submitted
+	                     console.log(response.data);
+                                  }
+              });
+}
+function saveOtherProfile()
+{
+	//window.alert("Save Other Proile Clicked");
+}

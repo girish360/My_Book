@@ -1,0 +1,54 @@
+.editprofile-body
+ {
+  background:#D488B0;
+  width: 900px;
+  margin: 0 auto;
+}
+
+.editprofile-header
+ {
+  background:yellow;
+  border: 3px solid green;
+  width: 850px;
+  text-align: center;
+}
+
+
+.editProfile_smallbox_left
+{
+ width: 500px;
+ height: 600px;
+ background:  ;
+ margin-top:20px;
+ margin-left:100px;
+ padding-top: 20px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ float:left;
+}
+
+
+.editProfile_smallbox_right
+{
+  width: 200px;
+ height: 300px;
+ background: ;
+ margin-top:20px;
+ padding-top: 20px;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ float: left;
+}
+
+
+
+#clock{
+    background-image:url('');
+    background-size:cover;
+    background-position: center;
+    height: 150px; width: 150px;
+    border: 1px solid #bbb;
+	background-image: url("../images/abhilash.jpg");
+}

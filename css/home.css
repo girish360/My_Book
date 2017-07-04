@@ -8,9 +8,11 @@ background-repeat: no-repeat;
 
 div.header
 {
- width: auto;
+ width: 1325px;
  height: 60px;
  padding-bottom: 30px;
+ margin-left:10px;
+ margin-right:10px;
  margin-bottom:0px;
  margin-top:0px;
  padding-top:0px;
@@ -23,13 +25,16 @@ div.header
 
 div.headerText
 {
- width: 300px;
+ width: 900px;
  height: 50px;
- background-color: white;
- padding-top: 0px;
- padding-left: 500px;
+ background: ;
+ margin-left:100px;
+ margin-top:10px;
+ margin-bottom:50px;
+ padding-top: 10px;
+ padding-left: 100px;
  padding-right: 20px;
- padding-bottom: 0px;
+ padding-bottom: 10px;
  float : left;
  text-align: center;
 }
@@ -45,14 +50,16 @@ div.headerText
 
 div.headerOptions
 {
- background-color: white;
+ background: ;
+ margin-right:10px;
+ margin-bottom:10px;
+ margin-top:10px;
  padding-top: 10px;
- padding-left: 350px;
  padding-right: 20px;
- padding-bottom: 0px;
+ padding-bottom: 10px;
  width: 150px;
  height: 50px;
- float: left;
+ float: right;
 }
 
 #smalllogoimage
@@ -102,20 +109,67 @@ div.smallBox_left
  overflow: auto;
 }
 
-div.profileimage
+div.profile_div
 {
  width: 150px;
- height: 100px;
+ height: 130px;
  padding: 5px;
  margin: 5px; 
+  position: relative;
 }
-#profileimage
+#profile_image
 {
-	width:80px;
-	height:80px;
+	width:150px;
+	height:120px;
 	display: block;
     margin: 0 auto;
+	position: absolute;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 130px;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
+}
+
+.profile_div:hover .overlay {
+  display: block;
+  background: rgba(0, 0, 0, .3);
+}
+.button {
+  position: absolute;
+  width: 80px;
+  padding-top:20px;
+  padding-left:15px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.button  .dim{
+  width: 80px;
+  padding:20px;
+  top: 100px;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
+  z-index: 1;
+}
+
+.profile_div:hover .button {
+  opacity: 1;
+}
+
+.username
+{
+width:150px;
+text-align: center;
+}
+
 
 .virticalnav
 {
@@ -126,7 +180,7 @@ div.profileimage
   padding-right: 10px;
   padding-bottom: 0px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
