@@ -42,7 +42,7 @@ app.config(function($routeProvider) {
 
 //Memories page controller 
 app.controller('memoriesController', function($scope, $http) {
-	$scope.msg = "I love London";
+	//$scope.msg = "I love London";
 	$scope.count = 0;
 	$scope.memoryId = 0;
 	$scope.memoryTitle="";
@@ -50,7 +50,7 @@ app.controller('memoriesController', function($scope, $http) {
     $http.get("./php/memories.php").then(function (response) {
 		
 		$scope.memories = response.data.records;
-		//console.log($scope.memories);
+		console.log($scope.memories);
 		});
 		
 	//Setting "clicked memory id, title and data" 
@@ -117,23 +117,63 @@ app.controller('memoriesController', function($scope, $http) {
 
 //For EditProfilePage
 app.controller('editProfileController', function($scope, $http) {
-	$scope.msg = "I love London";
-	//window.alert("Profile");
-	//console.log("profile");
-    $http.get("./php/editprofilefetch.php").then(function (response) {
+	
+	$scope.old_password = "";
+	$scope.new_password = "";
+	//To get data from database and set in respective field
+    $http.get("./php/editprofilefetch.php").then(function (response) 
+	   {
 		
 		$scope.profile= response.data.records;
 		console.log($scope.profile);
+		
+		$scope.firstname=$scope.profile[0].firstname;
+		$scope.lastname=$scope.profile[0].lastname;
+		
+		
 		});
 		
-	 $scope.saveProfile = function() {
-
-	           document.getElementById('saveProfileImage').click();
-			   //document.getElementById('saveProfileImage').click();
-			   //Here only the first submitted is working fine
-			   //document.getElementById('saveEditProfileChanges').click();
-			 
-               }
+	 //To save edited data
+	 $scope.formSubmit= function() 
+	   {
+		       //Write Angular http.post method to send all form data "except profile image"
+			   
+	              // To submitt profile image we click submitt button of the form containing profile image.
+			         //Implemmentation written in editprofile.js in jquery ajax
+			   angular.element("#saveProfileImageForm").triggerHandler("submit");
+			   
+			   window.alert("Profile Other information submitting code");
+                    //window.alert(typeof($scope.old_password));
+                   //console.log($scope.old_password);
+         
+                    var request = $http({
+					  method: 'POST',
+					  url: './php/editprofilesave.php',
+					  data:{firstname : $scope.firstname, lastname : $scope.lastname,old_password : $scope.old_password,new_password : $scope.new_password },
+					  headers: { 'Content-Type': 'application/json' }
+				        })
+				     request.then(function(response){
+					     if (response.data == "success")
+                         {
+				            console.log(response.data);
+							window.alert("Profile edited Successfully  Same code....  ");
+							//Updating username and profile image immediately.
+							//$("#username").text("Hello"+" "+$scope.firstname);
+					     }
+						 else if (response.data =="incorrect password")
+						 {
+						   console.log(response.data);
+						   window.alert("Incorrect Old password Entered  ");
+						   //Updating username and profile image immediately.
+						   //$("#username").text("Hello"+" "+$scope.firstname);
+						 }
+					 
+				      },function(error){
+					 window.alert(error);
+				      } );
+                
+			   
+        }
 	
 		
 });
@@ -160,21 +200,3 @@ function editProfile()
 window.location = "#!editprofile";
 }
 	
-
-function saveImage()
-{
-	window.alert("Save Image Clicked");
-      $.ajax({
-               url:'php/uploadprofileimage.php',
-               type:'post',
-               data:$('#saveProfileImage').serialize(),
-               success:function(response){
-              //whatever you wanna do after the form is successfully submitted
-	                     console.log(response.data);
-                                  }
-              });
-}
-function saveOtherProfile()
-{
-	//window.alert("Save Other Proile Clicked");
-}

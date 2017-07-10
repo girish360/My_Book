@@ -28,8 +28,19 @@ $lastname=$_POST["lastname"];
 $email=$_POST["email"];
 $password=$_POST["password"];
 $sql = "INSERT INTO Profile (firstname, lastname, email, password)
-VALUES ('".$firstname."', '".$lastname."', '".$email."', '".$password."')";
+VALUES ('".$firstname."','".$lastname."','".$email."','".$password."')";
 
+
+if ($conn->query($sql) === TRUE) 
+{
+    $last_id = $conn->insert_id;
+    echo "<br>Success<br>";
+} 
+else
+{
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+$conn->close();
 ?>
 
 </body>

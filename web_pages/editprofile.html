@@ -12,16 +12,16 @@
 <div class="editprofile-header">
 <h2>Edit Profile Page</h2>
 </div>
-<div class="editProfile_smallbox_left" ng-repeat="x in profile">
-<form action="" method="post" enctype="multipart/form-data">
+<div class="editProfile_smallbox_left">
+<form action="" method="post" enctype="multipart/form-data" ng-submit="formSubmit()">
 <table>
 <col width="190">
 <col width="80">
 <tr>
-<td>First name:</td> <td> <input type="text" name="firstname" value="{{x.firstname}}"></td>
+<td>First name:</td> <td> <input type="text" name="firstname" ng-model="firstname" ></td>
 </tr>
 <tr>
-<td>  Last name:</td><td> <input type="text" name="lastname" value="{{x.lastname}}"></td>
+<td>  Last name:</td><td> <input type="text" name="lastname" ng-model="lastname"></td>
 </tr>
 <tr>
 <td>  Email:</td><td><p>{{x.email}}</p></td>
@@ -31,13 +31,13 @@
 </tr>
 <tbody class="editPassword" style="display:none">
 <tr>
-<td>  Enter old-Password:</td><td> <input type="text" name="old_password"></td>
+<td>  Enter old-Password:</td><td> <input type="text" name="old_password" ng-model="old_password"></td>
 </tr>
 <tr>
-<td>  Enter New-Password:</td><td> <input type="text" name="new_password"></td>
+<td>  Enter New-Password:</td><td> <input type="text" name="new_password" ng-model="new_password"></td>
 </tr>
 <tr>
-<td>  Confirm New-Password:</td><td> <input type="text" name="reentered_newpassword"></td>
+<td>  Confirm New-Password:</td><td> <input type="text" name="reentered_newpassword" ng-model="reentered_newpassword"></td>
 </tr>
 <tr>
 <td></td>
@@ -51,7 +51,7 @@
 <tr>
 
     <td align="right">
-    <input type="submit" value="Save Changes " id="saveEditProfileChanges" name="saveEditProfileChanges" onclick="saveOtherProfile()">
+    <input type="submit" value="Save Changes " id="saveEditProfileChanges" name="saveEditProfileChanges" >
 	</td>
 	<td align="right">
 	<input type="button" value="Cancel Changes " id="cancelChanges" name="cancelChanges">
@@ -75,15 +75,14 @@
     <td align="center">
 	<input type="button" value="Edit Profile image"  onclick="document.getElementById('getval').click();" />
 	
-	<form action="" method="post" name="saveProfileImage"  enctype="multipart/form-data" onsubmit="saveImage()">
+	<form action="" method="post" name="saveProfileImage" id="saveProfileImageForm" enctype="multipart/form-data">
 	   <input type='file' name="fileToUpload" id='getval'  style="display:none;"/>
-       <input type="submit" value="Upload Image" name="saveProfileImage" id="saveProfileImage"   style="display:none;">
+       <input type="submit" value="Upload Image" name="saveProfileImageSubmit" style="display:none;">
      </form>
 	 
 	</td>
 </tr>
 </table>
-<input type="submit" value="Save Changes " id="save" name="saveChanges" ng-click="saveProfile()">
 </div>
 
 </body>

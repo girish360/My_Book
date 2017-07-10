@@ -24,4 +24,5 @@ if ($result == true)
 {
 echo "success";
 }
+$conn->close();
 ?>
