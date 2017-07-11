@@ -116,7 +116,8 @@ app.controller('memoriesController', function($scope, $http) {
 
 
 //For EditProfilePage
-app.controller('editProfileController', function($scope, $http) {
+app.controller('editProfileController', function($scope, $http) 
+{
 	
 	$scope.old_password = "";
 	$scope.new_password = "";
@@ -129,6 +130,7 @@ app.controller('editProfileController', function($scope, $http) {
 		
 		$scope.firstname=$scope.profile[0].firstname;
 		$scope.lastname=$scope.profile[0].lastname;
+		$scope.email=$scope.profile[0].email;
 		
 		
 		});
@@ -136,15 +138,15 @@ app.controller('editProfileController', function($scope, $http) {
 	 //To save edited data
 	 $scope.formSubmit= function() 
 	   {
+		   
+		   
 		       //Write Angular http.post method to send all form data "except profile image"
 			   
 	              // To submitt profile image we click submitt button of the form containing profile image.
-			         //Implemmentation written in editprofile.js in jquery ajax
-			   angular.element("#saveProfileImageForm").triggerHandler("submit");
+			         //Implemmentation written in editprofile.js in jquery ajax	
+              // angular.element("#saveProfileImageForm").triggerHandler("submit");
 			   
 			   window.alert("Profile Other information submitting code");
-                    //window.alert(typeof($scope.old_password));
-                   //console.log($scope.old_password);
          
                     var request = $http({
 					  method: 'POST',
@@ -156,23 +158,24 @@ app.controller('editProfileController', function($scope, $http) {
 					     if (response.data == "success")
                          {
 				            console.log(response.data);
-							window.alert("Profile edited Successfully  Same code....  ");
-							//Updating username and profile image immediately.
-							//$("#username").text("Hello"+" "+$scope.firstname);
+							window.alert("Profile edited Successfully ");
+								
+
 					     }
 						 else if (response.data =="incorrect password")
 						 {
 						   console.log(response.data);
 						   window.alert("Incorrect Old password Entered  ");
-						   //Updating username and profile image immediately.
-						   //$("#username").text("Hello"+" "+$scope.firstname);
+						   
 						 }
 					 
 				      },function(error){
-					 window.alert(error);
+					 window.alert("Error "+error);
+					 
 				      } );
+						  
                 
-			   
+			    
         }
 	
 		
@@ -182,12 +185,24 @@ app.controller('editProfileController', function($scope, $http) {
 
 (function($) {
 $(document).ready(function(){
+
+//Fetching username	
 $.ajax({
   type: "POST",
   url: "php/home.php",
   data: "",
 }).done(function( msg ) {
   	$("#username").text("Hello"+" "+ msg);
+});
+
+//Fetching profile image
+$.ajax({
+  type: "POST",
+  url: "php/editprofilefetchprofileimage.php",
+  data: "",
+}).done(function( msg ) {
+  //window.alert(msg);
+	document.getElementById("profile_image").src="php/"+msg;
 });
 
 

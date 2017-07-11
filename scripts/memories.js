@@ -2,10 +2,16 @@
 (function($) {
 
     $(document).ready(function(){
-		
+	setTimeout(function(){ 
+	$(".smallBox_center").css("height", $(".memories-allmemories").height()+ 200);
+    $(".footer").css("margin-top", $(".memories-allmemories").height()+ 200);
+	console.log($(".memories-allmemories").height());
+	console.log($(".smallBox_center").height());
+	}, 300);
 
 		
-	if (window.location.href.indexOf('reload')==-1) {
+	if (window.location.href.indexOf('reload')==-1) 
+	{
          window.location.replace(window.location.href+'?reload');
 		 location.reload();
     }
@@ -44,13 +50,6 @@
          e.stopPropagation();
 		// window.alert("stopped propagating to child");
 	});
-
-	setTimeout(function(){ 
-	$(".smallBox_center").css("height", $(".memories-allmemories").height()+ 200);
-    $(".footer").css("margin-top", $(".memories-allmemories").height()+ 200);
-	console.log($(".memories-allmemories").height());
-	console.log($(".smallBox_center").height());
-	}, 200);
 	
 	
     });

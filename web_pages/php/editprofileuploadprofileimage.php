@@ -12,11 +12,15 @@ if ((($_FILES["fileToUpload"]["type"] == "image/png") || ($_FILES["fileToUpload"
 {
 	
 $path_parts = pathinfo($_FILES["fileToUpload"]["name"]);
-$extension=$path_parts['extension'];
-
 
 $sourcePath = $_FILES['fileToUpload']['tmp_name']; // Storing source path of the file in a variable
-$targetPath = "static/Profile_images/" . "$user_id"."."."$extension"; // Target path where file is to be stored
+
+//$extension=$path_parts['extension'];
+//$targetPath = "static/Profile_images/" . "$user_id"."."."$extension"; // Target path where file is to be stored
+
+//All images stored only in jpg format only. The above commented code will save in it's original format.But in order to avoid multiple profile images 
+ //for same user... we are using jpg only. 
+$targetPath = "static/Profile_images/" . "$user_id".".jpg"; // Target path where file is to be stored
 
 move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
 /*

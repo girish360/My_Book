@@ -1,8 +1,27 @@
 $(document).ready(function (e) {
+	
+	
+setTimeout(function(){
+$(".smallBox_center").css("height", $(".editProfile_smallbox_left").height()+ 200);
+$(".footer").css("margin-top", $(".editProfile_smallbox_left").height()+ 200);
+
+
+//Fetching profile image
+$.ajax({
+  type: "POST",
+  url: "php/editprofilefetchprofileimage.php",
+  data: "",
+}).done(function( msg ) {
+    //window.alert(msg);
+	//$(".image").html(msg);
+	document.getElementById("clock").style.backgroundImage = 'url(php/' + msg + ')';
+});
+}, 100);
+//document.getElementById("saveEditProfileChanges").click();
+
 $("#saveProfileImageForm").on('submit',(function(e) {
 window.alert("Profile image submitting code");
 e.preventDefault();
-
 
 $.ajax({
 url: "php/editprofileuploadprofileimage.php", // Url to which the request is send
@@ -15,10 +34,24 @@ success: function(data)   // A function to be called if request succeeds
 {
 console.log(data);
 window.alert("Profile image edited successfully");
+
+//Fetching profile image
+$.ajax({
+  type: "POST",
+  url: "php/editprofilefetchprofileimage.php",
+  data: "",
+}).done(function( msg ) {
+	document.getElementById("profile_image").src="php/"+msg;
+	document.getElementById("clock").style.backgroundImage = 'url(php/' + msg + ')';
+});
+
 }
+
 });
 
 }));
+
+
 });
 
 
