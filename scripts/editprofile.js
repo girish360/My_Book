@@ -1,26 +1,21 @@
 $(document).ready(function (e) {
 	
-	
-setTimeout(function(){
-$(".smallBox_center").css("height", $(".editProfile_smallbox_left").height()+ 200);
-$(".footer").css("margin-top", $(".editProfile_smallbox_left").height()+ 200);
-
-
 //Fetching profile image
+//Setting profile image after refreshing the epage
+setTimeout(function(){
 $.ajax({
   type: "POST",
   url: "php/editprofilefetchprofileimage.php",
   data: "",
 }).done(function( msg ) {
     //window.alert(msg);
-	//$(".image").html(msg);
+	document.getElementById("profile_image").src="php/"+msg;
 	document.getElementById("clock").style.backgroundImage = 'url(php/' + msg + ')';
 });
-}, 100);
-//document.getElementById("saveEditProfileChanges").click();
+}, 300);
 
 $("#saveProfileImageForm").on('submit',(function(e) {
-window.alert("Profile image submitting code");
+//window.alert("Profile image submitting code");
 e.preventDefault();
 
 $.ajax({
@@ -33,16 +28,20 @@ processData:false,        // To send DOMDocument or non processed data file it i
 success: function(data)   // A function to be called if request succeeds
 {
 console.log(data);
-window.alert("Profile image edited successfully");
+//window.alert("Profile image edited successfully");
 
 //Fetching profile image
+//Setting profile image after uploading the image
 $.ajax({
   type: "POST",
   url: "php/editprofilefetchprofileimage.php",
   data: "",
 }).done(function( msg ) {
+	//window.alert("Setting the profile image");
 	document.getElementById("profile_image").src="php/"+msg;
 	document.getElementById("clock").style.backgroundImage = 'url(php/' + msg + ')';
+	window.alert("Profile edited Successfully ");
+	location.reload(true);
 });
 
 }
@@ -50,6 +49,14 @@ $.ajax({
 });
 
 }));
+
+
+setTimeout(function(){
+$(".smallBox_center").css("height", $(".editProfile_smallbox_left").height()+ 200);
+$(".footer").css("margin-top", $(".editProfile_smallbox_left").height()+ 200);
+}, 100);
+
+
 
 
 });

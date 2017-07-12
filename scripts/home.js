@@ -1,3 +1,4 @@
+
 var app = angular.module("myApp", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
@@ -98,7 +99,7 @@ app.controller('memoriesController', function($scope, $http) {
 					 }
 					 
 				 },function(error){
-					 window.alert(error);
+					 //window.alert(error);
 				 });
 				  },500);
 				  
@@ -145,8 +146,10 @@ app.controller('editProfileController', function($scope, $http)
 	              // To submitt profile image we click submitt button of the form containing profile image.
 			         //Implemmentation written in editprofile.js in jquery ajax	
               // angular.element("#saveProfileImageForm").triggerHandler("submit");
+			  
+			   document.getElementById("saveProfileImageSubmitButton").click();
 			   
-			   window.alert("Profile Other information submitting code");
+			   //window.alert("Profile Other information submitting code");
          
                     var request = $http({
 					  method: 'POST',
@@ -158,8 +161,7 @@ app.controller('editProfileController', function($scope, $http)
 					     if (response.data == "success")
                          {
 				            console.log(response.data);
-							window.alert("Profile edited Successfully ");
-								
+							window.alert("Profile edited Successfully ");					
 
 					     }
 						 else if (response.data =="incorrect password")
@@ -196,15 +198,19 @@ $.ajax({
 });
 
 //Fetching profile image
+//Setting profile image after page load every time.
+setTimeout(function(){
 $.ajax({
   type: "POST",
   url: "php/editprofilefetchprofileimage.php",
   data: "",
 }).done(function( msg ) {
-  //window.alert(msg);
+	//window.alert("Setting the profile image");
 	document.getElementById("profile_image").src="php/"+msg;
+	//document.getElementById("clock").style.backgroundImage = 'url(php/' + msg + ')';
 });
 
+}, 100);
 
 });
 })(jQuery);
