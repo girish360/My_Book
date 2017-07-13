@@ -187,6 +187,9 @@ app.controller('editProfileController', function($scope, $http)
 
 (function($) {
 $(document).ready(function(){
+	
+	
+$.ajaxSetup({ cache: false });	
 
 //Fetching username	
 $.ajax({
@@ -204,6 +207,7 @@ $.ajax({
   type: "POST",
   url: "php/editprofilefetchprofileimage.php",
   data: "",
+  cache: false
 }).done(function( msg ) {
 	//window.alert("Setting the profile image");
 	document.getElementById("profile_image").src="php/"+msg;

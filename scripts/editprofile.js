@@ -1,5 +1,7 @@
 $(document).ready(function (e) {
-	
+
+$.ajaxSetup({ cache: false });
+
 //Fetching profile image
 //Setting profile image after refreshing the epage
 setTimeout(function(){
@@ -7,6 +9,7 @@ $.ajax({
   type: "POST",
   url: "php/editprofilefetchprofileimage.php",
   data: "",
+  cache: false
 }).done(function( msg ) {
     //window.alert(msg);
 	document.getElementById("profile_image").src="php/"+msg;
@@ -25,6 +28,7 @@ data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e.
 contentType: false,       // The content type used when sending data to the server.
 cache: false,             // To unable request pages to be cached
 processData:false,        // To send DOMDocument or non processed data file it is set to false
+cache: false,
 success: function(data)   // A function to be called if request succeeds
 {
 console.log(data);
@@ -36,12 +40,13 @@ $.ajax({
   type: "POST",
   url: "php/editprofilefetchprofileimage.php",
   data: "",
+  cache: false
 }).done(function( msg ) {
 	//window.alert("Setting the profile image");
 	document.getElementById("profile_image").src="php/"+msg;
 	document.getElementById("clock").style.backgroundImage = 'url(php/' + msg + ')';
 	window.alert("Profile edited Successfully ");
-	location.reload(true);
+	top.location.reload(1); 
 });
 
 }
