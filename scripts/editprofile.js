@@ -32,7 +32,7 @@ cache: false,
 success: function(data)   // A function to be called if request succeeds
 {
 console.log(data);
-//window.alert("Profile image edited successfully");
+window.alert("Profile image edited successfully");
 
 //Fetching profile image
 //Setting profile image after uploading the image
@@ -45,7 +45,6 @@ $.ajax({
 	//window.alert("Setting the profile image");
 	document.getElementById("profile_image").src="php/"+msg;
 	document.getElementById("clock").style.backgroundImage = 'url(php/' + msg + ')';
-	window.alert("Profile edited Successfully ");
 	top.location.reload(1); 
 });
 

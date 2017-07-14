@@ -146,8 +146,7 @@ app.controller('editProfileController', function($scope, $http)
 	              // To submitt profile image we click submitt button of the form containing profile image.
 			         //Implemmentation written in editprofile.js in jquery ajax	
               // angular.element("#saveProfileImageForm").triggerHandler("submit");
-			  
-			   document.getElementById("saveProfileImageSubmitButton").click();
+			   
 			   
 			   //window.alert("Profile Other information submitting code");
          
@@ -161,7 +160,9 @@ app.controller('editProfileController', function($scope, $http)
 					     if (response.data == "success")
                          {
 				            console.log(response.data);
-							window.alert("Profile edited Successfully ");					
+							window.alert("Profile edited Successfully ");		
+							document.getElementById("saveProfileImageSubmitButton").click();
+                            							
 
 					     }
 						 else if (response.data =="incorrect password")
@@ -171,10 +172,12 @@ app.controller('editProfileController', function($scope, $http)
 						   
 						 }
 					 
-				      },function(error){
+				      });
+					  /*,function(error){
 					 window.alert("Error "+error);
 					 
-				      } );
+				      } */
+					  
 						  
                 
 			    
@@ -187,7 +190,9 @@ app.controller('editProfileController', function($scope, $http)
 
 (function($) {
 $(document).ready(function(){
-	
+
+
+window.alert("Refreshing the page");
 	
 $.ajaxSetup({ cache: false });	
 
@@ -214,7 +219,7 @@ $.ajax({
 	//document.getElementById("clock").style.backgroundImage = 'url(php/' + msg + ')';
 });
 
-}, 100);
+}, 200);
 
 });
 })(jQuery);
